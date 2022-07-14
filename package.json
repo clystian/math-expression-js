@@ -1,0 +1,17 @@
+{
+  "name": "math-expression",
+  "version": "1.0.0",
+  "description": "math utils",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "math"
+  ],
+  "author": "Cristian Hernandez",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^28.1.3"
+  }
+}
