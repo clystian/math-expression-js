@@ -9,7 +9,6 @@ exports.evaluateExpression = function evaluateExpression(strExp) {
     match = reg.exec(result);
     if (match) {
       result = result.replace(match[0], evaluateOperation(match[0])).replace(/\-{2}/, '+');;
-      console.log("match div", match, result);
     }
   } while (/[\*\/]/.test(result));
 
@@ -17,11 +16,9 @@ exports.evaluateExpression = function evaluateExpression(strExp) {
     match = regPlus.exec(result);
     if (match) {
       result = result.replace(match[0], evaluateOperation(match[0])).replace(/\-{2}/, '+');;
-      console.log("match plus", match[0], result);
     }
   } while (/(\d+(\.\d+)?)[\+\-]/.test(result));
 
-  console.log("result", result);
   return +result;
 };
 
@@ -34,7 +31,6 @@ function evaluateOperation(str) {
   const {
     groups: { a, op, b },
   } = match;
-  console.info(+a, op, +b);
   if (operatorExp.test(str)) {
     if (op === "/") {
       return (+a / +b).toString();
